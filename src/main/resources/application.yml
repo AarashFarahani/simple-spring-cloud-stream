@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        input-in-0:
+          destination: inputTopic
+        output-out-0:
+          destination: outputTopic
+        processor-in-0:
+          destination: inputTopic
+        processor-out-0:
+          destination: outputTopic
+    function:
+      definition: input;output;processor
